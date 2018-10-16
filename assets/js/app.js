@@ -1,3 +1,4 @@
+// SPACE THEMED TRIVIA
 // document.ready? Followed by window.onload?
 
 // Display the guesses during and at end of game
@@ -5,13 +6,14 @@ var corGCount = $("#corGuessed");
 var incorGCount = $("#incorGuessed");
 var question = $("#q-and-a");
 
-    var questions = [
+    var space = [
         {
         question: "In what year did Neil Armstrong step foot on the moon?",
         answer: [
-            "1965",
-            "1969",
-            "1973",
+            1965,
+            1968,
+            1969,
+            1973,
         ],
         correctAnswer: 1969,
         },
@@ -22,6 +24,16 @@ var question = $("#q-and-a");
             "False",
         ],
         correctAnswer: true,
+        },
+        {
+        question: "All stars uses this element as it's fuel (hint: it's the most abundant element in the universe!)",
+        answer: [
+            "Helium",
+            "Iron",
+            "Hydrogen",
+            "Oxygen",
+        ],
+        correctAnswer: "Hydrogen",
         },
     ]
 
@@ -46,7 +58,7 @@ var question = $("#q-and-a");
             // decrement time by 1
             game.time--;
 
-            /* Get the current time, pass that into the timer.timeConverter function */
+            /* Get the current time, pass that into the game.timeConverter function */
             // result saved in var "converted"
             var converted = game.timeConverter(game.time);
             console.log(converted);
@@ -65,6 +77,7 @@ var question = $("#q-and-a");
                 alert("Out of Time! Game Over!");
             }
             console.log('start func running...');
+            /* implement for loop on for loop to access the space object and it's arrays of questions create a whole separate function to handle this? */
         },
         endGame: function() {
             corGCount.text(corGuess);
