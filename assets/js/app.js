@@ -1,9 +1,5 @@
 // document.ready? Followed by window.onload?
 
-
-
-// Initialize player scores
-
 // Display the guesses during and at end of game
 var corGCount = $("#corGuessed");
 var incorGCount = $("#incorGuessed");
@@ -30,6 +26,16 @@ var question = $("#q-and-a");
         },
     ]
 
+    window.onload = function() {
+        // start timer
+        $("#start").on("click", game.start); 
+        // -- Next to build --- 
+        // set start button to hidden when clicked
+        // Start button will initiate question q-and-a sequence
+
+        // div id=q-and-a - populate with question and answers
+    };
+
     var timerRunning = false;
     var game = {
         corGuess: 0, // Correct guesses
@@ -55,6 +61,9 @@ var question = $("#q-and-a");
                 setInterval(game.countDown, 1000 * 1);
                 timerRunning = true;
                 }
+            else if (game.time == 0){
+                alert("Out of Time! Game Over!");
+            }
             console.log('start func running...');
         },
         endGame: function() {
@@ -77,8 +86,6 @@ var question = $("#q-and-a");
             return minutes + ":" + seconds;
         },
     }
-    game.start();
-    game.countDown();
     
 
     //
