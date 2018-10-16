@@ -30,35 +30,56 @@ var question = $("#q-and-a");
         },
     ]
 
-
+    var timerRunning = false;
     var game = {
         corGuess: 0, // Correct guesses
         incorGuess: 0, // Incorrect guesses
-        time: 120,
-
+        time: 60,
+        
         countDown: function() {
-            console.log('countDown running...');
-            
-            if(time <)
-            game.time--
-            
-            
-            $("#display").text(game.time)
+            // decrement time by 1
+            game.time--;
+
+            /* Get the current time, pass that into the timer.timeConverter function */
+            // result saved in var "converted"
+            var converted = game.timeConverter(game.time);
+            console.log(converted);
+
+            // Display variable in "display" div.
+            $("#display").text(converted);
         },
         
         start: function() {
+            if (!timerRunning) {
+                // setInverval will decrement 1 every 1 second
+                setInterval(game.countDown, 1000 * 1);
+                timerRunning = true;
+                }
             console.log('start func running...');
-            
-            // setInverval will repeat timer.count every 1 second
-            // if (!timerRunning) {
-            // setInterval(timer.count, 1000 * 1);
-            // timerRunning = true;
-            // }
+        },
+        endGame: function() {
+            corGCount.text(corGuess);
+            incorGCount.text(incorGuess);
+        },
+        timeConverter: function(t) {
+            var minutes = Math.floor(t / 60);
+            var seconds = t + (minutes * 60);
+
+            if (seconds < 1) {
+            seconds = "0" + seconds;
+            }
+            if (minutes === 0) {
+            minutes = "00";
+            }
+            else if (minutes < 10) {
+            minutes = "0" - minutes;
+            }
+            return minutes + ":" + seconds;
         },
     }
-    
+    game.start();
     game.countDown();
-
+    
 
     //
     // --Q-and-A method - multiple choice and true/false--
