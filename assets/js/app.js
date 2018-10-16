@@ -26,7 +26,7 @@ var question = $("#q-and-a");
         correctAnswer: true,
         },
         {
-        question: "All stars uses this element as it's fuel (hint: it's the most abundant element in the universe!)",
+        question: "All stars use this element as it's fuel (hint: it's the most abundant element in the universe!)",
         answer: [
             "Helium",
             "Iron",
@@ -40,11 +40,23 @@ var question = $("#q-and-a");
     window.onload = function() {
         // start timer
         $("#start").on("click", game.start); 
+
         // -- Next to build --- 
+
         // set start button to hidden when clicked
+
         // Start button will initiate question q-and-a sequence
 
-        // set Start button to populate page with question and answers
+        /* implement for loop on for loop to access the space object and it's arrays of questions create a whole separate function to handle this? Should this be part of the game.start object?*/
+        for (var i=0; i<space.question.length; i++) {
+            for(var j=0; j<space.answer.length; i++) {
+                // if user clicks corect space.answer, corGuess++
+                // else is user clicks incorrect space.answer, incorGuess++
+            }
+        }
+
+
+
         // display q's and a's in: div id=q-and-a 
     };
 
@@ -77,12 +89,13 @@ var question = $("#q-and-a");
                 alert("Out of Time! Game Over!");
             }
             console.log('start func running...');
-            /* implement for loop on for loop to access the space object and it's arrays of questions create a whole separate function to handle this? */
         },
+        /* These score updates will eventually be implemented in another function - considering adding score clearing instructions for the endGame function */
         endGame: function() {
             corGCount.text(corGuess);
             incorGCount.text(incorGuess);
         },
+        // This converts game.time to look like a digital timer - still needs a bit of tweaking to work with more than 60 seconds of time
         timeConverter: function(t) {
             var minutes = Math.floor(t / 60);
             var seconds = t + (minutes * 60);
