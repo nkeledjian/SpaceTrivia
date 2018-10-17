@@ -36,10 +36,14 @@ var question = $("#q-and-a");
         correctAnswer: "Hydrogen",
         },
     ]
-
+    console.log(space[0]);
     window.onload = function() {
         // start timer
         $("#start").on("click", game.start); 
+        // html.append questions
+
+
+        // collect user answers...
 
         // -- Next to build --- 
 
@@ -48,17 +52,29 @@ var question = $("#q-and-a");
         // Start button will initiate question q-and-a sequence
 
         /* implement for loop on for loop to access the space object and it's arrays of questions create a whole separate function to handle this? Should this be part of the game.start object?*/
-        for (var i=0; i<space.question.length; i++) {
-            for(var j=0; j<space.answer.length; i++) {
-                // if user clicks corect space.answer, corGuess++
-                // else is user clicks incorrect space.answer, incorGuess++
-            }
-        }
+        // for (var i=0; i<space.length; i++) {
+        //     console.log(space.length);
+        //     console.log(space[i].question);
+            
+        //     for(var j=0; j<space[i].answer.length; i++) {
 
-
-
+        //         console.log(space[i].answer)
+        //         // if user clicks corect space.answer, corGuess++
+        //         // else is user clicks incorrect space.answer, incorGuess++
+        //     }
+        // }
+        
         // display q's and a's in: div id=q-and-a 
     };
+
+    // ---NOTES---
+    // Function to load question - load question right as timer starts
+    // Current question counter - aid for loading question
+    // Answer submission = increment current question counter
+    // Call load question function with new question 
+    // Radio buttons for form - assign value to <input> tags
+        // If user selects correct radio button = corGuess++
+
 
     var timerRunning = false;
     var game = {
@@ -78,7 +94,24 @@ var question = $("#q-and-a");
             // Display variable in "display" div.
             $("#display").text(converted);
         },
-        
+        nextQuestion: function(){
+            // load question and cycle through questions
+
+            // currentQuestion++
+            // load();
+        },
+        load: function(){
+            // call start function
+            // display one question using current question
+            // for loop - access answers only
+            for(var j=0; j<space[i].answer.length; i++) {
+
+                console.log(space[i].answer)
+                // if user clicks corect space.answer, corGuess++
+                // else is user clicks incorrect space.answer, incorGuess++
+            }
+        },
+
         start: function() {
             if (!timerRunning) {
                 // setInverval will decrement 1 every 1 second
@@ -87,8 +120,10 @@ var question = $("#q-and-a");
                 }
             else if (game.time == 0){
                 alert("Out of Time! Game Over!");
+                // question ending function - no more question? display results page
             }
             console.log('start func running...');
+
         },
         /* These score updates will eventually be implemented in another function - considering adding score clearing instructions for the endGame function */
         endGame: function() {
