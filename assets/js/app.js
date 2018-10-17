@@ -26,7 +26,7 @@ var question = $("#q-and-a");
         correctAnswer: true,
         },
         {
-        question: "All stars use this element as it's fuel (hint: it's the most abundant element in the universe!)",
+        question: "All stars use this element as it's main source of fuel (hint: it's the most abundant element in the universe!)",
         answer: [
             "Helium",
             "Iron",
@@ -36,7 +36,7 @@ var question = $("#q-and-a");
         correctAnswer: "Hydrogen",
         },
     ]
-    console.log(space[0]);
+    
     window.onload = function() {
         // start timer
         $("#start").on("click", game.start); 
@@ -75,7 +75,9 @@ var question = $("#q-and-a");
     // Radio buttons for form - assign value to <input> tags
         // If user selects correct <input> = corGuess++
 
-
+    console.log(space[0]);
+    console.log(space[1]);
+    console.log(space[2]);
     var timerRunning = false;
     var game = {
         corGuess: 0, // Correct guesses
