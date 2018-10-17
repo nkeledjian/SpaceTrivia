@@ -73,7 +73,7 @@ var question = $("#q-and-a");
     // Answer submission = increment current question counter
     // Call load question function with new question 
     // Radio buttons for form - assign value to <input> tags
-        // If user selects correct radio button = corGuess++
+        // If user selects correct <input> = corGuess++
 
 
     var timerRunning = false;
@@ -119,8 +119,9 @@ var question = $("#q-and-a");
                 timerRunning = true;
                 }
             else if (game.time == 0){
+                // endGame(); - no more question? display results page
                 alert("Out of Time! Game Over!");
-                // question ending function - no more question? display results page
+                
             }
             console.log('start func running...');
 
