@@ -2,6 +2,12 @@ body { /* Visual */
     background: rgb(4, 2, 26);
   }
   
+  h2 {
+    color: rgb(24, 180, 24);
+  }
+  label {
+    color: rgb(24, 180, 24);
+  }
   #wrapper {
     /* Box-model */
     width: 500px;
