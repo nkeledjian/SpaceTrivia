@@ -105,10 +105,10 @@ var question = $("#q-and-a");
         load: function(){
             // call start function
             // display one question using current question
-            // for loop - access answers only
+            // for loop for accessing answers only
             for(var j=0; j<space[i].answer.length; i++) {
-
-                console.log(space[i].answer)
+                
+                
                 // if user clicks corect space.answer, corGuess++
                 // else is user clicks incorrect space.answer, incorGuess++
             }
@@ -121,14 +121,14 @@ var question = $("#q-and-a");
                 timerRunning = true;
                 }
             else if (game.time == 0){
-                // endGame(); - no more question? display results page
+                // endGame(); - no more questions? display results page
                 alert("Out of Time! Game Over!");
                 
             }
             console.log('start func running...');
 
         },
-        /* These score updates will eventually be implemented in another function - considering adding score clearing instructions for the endGame function */
+        /* Considering adding score clearing instructions for the endGame function */
         endGame: function() {
             corGCount.text(corGuess);
             incorGCount.text(incorGuess);
