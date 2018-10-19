@@ -6,36 +6,36 @@ var corGCount = $("#corGuessed");
 var incorGCount = $("#incorGuessed");
 var question = $("#q-and-a");
 
-    var space = [
-        {
-        question: "In what year did Neil Armstrong step foot on the moon?",
-        answer: [
-            1965,
-            1968,
-            1969,
-            1973,
-        ],
-        correctAnswer: 1969,
-        },
-        {
-        question: "True or False: The Earth is 93 million miles away from the Sun",
-        answer: [
-            "True",
-            "False",
-        ],
-        correctAnswer: true,
-        },
-        {
-        question: "All stars use this element as it's main source of fuel (hint: it's the most abundant element in the universe!)",
-        answer: [
-            "Helium",
-            "Iron",
-            "Hydrogen",
-            "Oxygen",
-        ],
-        correctAnswer: "Hydrogen",
-        },
-    ]
+    // var space = [
+    //     {
+    //     question: "In what year did Neil Armstrong step foot on the moon?",
+    //     answer: [
+    //         1965,
+    //         1968,
+    //         1969,
+    //         1973,
+    //     ],
+    //     correctAnswer: 1969,
+    //     },
+    //     {
+    //     question: "True or False: The Earth is 93 million miles away from the Sun",
+    //     answer: [
+    //         "True",
+    //         "False",
+    //     ],
+    //     correctAnswer: true,
+    //     },
+    //     {
+    //     question: "All stars use this element as it's main source of fuel (hint: it's the most abundant element in the universe!)",
+    //     answer: [
+    //         "Helium",
+    //         "Iron",
+    //         "Hydrogen",
+    //         "Oxygen",
+    //     ],
+    //     correctAnswer: "Hydrogen",
+    //     },
+    // ]
     
     window.onload = function() {
         // start timer
@@ -116,6 +116,7 @@ var question = $("#q-and-a");
             for (var i=0; i<space[i].length; i++) {
                 console.log("space[i]", space[i]);
                 for(var j=0; j<space[j].answer[j].length; j++) {
+                    if ()
                     console.log("Space answer", space[j].answer);
                     
                     // if user clicks corect space.answer, corGuess++
