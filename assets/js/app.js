@@ -8,10 +8,9 @@ var incorGCount = $("#incorGuessed");
     window.onload = function() {
         // start timer
         $("#start").on("click", game.start); 
-        
+    
         // -- Next to build --- 
         // set start sequence at first radio button selection?
-        
     };
 
     var timerRunning = false;
