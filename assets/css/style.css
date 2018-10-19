@@ -8,6 +8,12 @@ body { /* Visual */
   label {
     color: rgb(24, 180, 24);
   }
+  #corGuessed {
+    color: lightgreen;
+  }
+  #incorGuessed {
+    color: lightgreen;
+  }
   #wrapper {
     /* Box-model */
     width: 500px;

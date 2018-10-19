@@ -42,18 +42,10 @@ var incorGCount = $("#incorGuessed");
         
         // -- Next to build --- 
 
-        // set start sequence at first radio button selection
+        // set start sequence at first radio button selection?
         
     };
 
-    // ---NOTES---
-    
-    // Radio buttons for form - assign value to <input> tags
-        // If user selects correct <input> = corGuess++
-
-    // console.log("Moon question", space[0].answer);
-    // console.log("Sun question", space[1].correctAnswer);
-    // console.log("Element question", space[2]);
     var timerRunning = false;
     var game = {
         corGuess: 0, // Correct guesses
@@ -75,42 +67,50 @@ var incorGCount = $("#incorGuessed");
         },
         select: function(){
             $('#select1 input:radio').click(function(){
-                if ($(this.value).val() === '3'){
+                if ($(this).val() === '3'){
                     game.corGuess++;
+                    corGCount.text(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
                     }
-                else {
+                else if ($(this).val() != '3'){
                     game.incorGuess++;
+                    incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
                     }
             })
             $('#select2 input:radio').click(function(){
-                if ($(this.value).val() === '1'){
+                if ($(this).val() === '1'){
                     game.corGuess++;
+                    corGCount.text(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
                     }
-                else {
+                else if ($(this).val() != '1'){
                     game.incorGuess++;
+                    incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
                     }
             })
             $('#select3 input:radio').click(function(){
-                if ($(this.value).val() === '3'){
+                if ($(this).val() === '3'){
                     game.corGuess++;
+                    corGCount.text(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
                     }
-                else {
+                else if ($(this).val() != '3'){
                     game.incorGuess++;
+                    incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
                     }
             })
             $('#select4 input:radio').click(function(){
-                if ($(this.value).val() === '3'){
+                if ($(this).val() === '3'){
                     game.corGuess++;
+                    corGCount.text(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
                     }
-                else {
+                else if ($(this).val() != '3'){
                     game.incorGuess++;
+                    incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
                     }
             })
