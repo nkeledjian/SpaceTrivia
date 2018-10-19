@@ -2,10 +2,9 @@
 // document.ready? Followed by window.onselect?
 
 // Display the guesses during and at end of game
-var corGCount = $("#corGuessed");
-var incorGCount = $("#incorGuessed");
-var question = $("#q-and-a");
-var corAnswers = [1969, true, "hydrogen", "venus"]
+var corGCount = $("#corGuessed", corGuess);
+var incorGCount = $("#incorGuessed", incorGuess);
+
     // var space = [
     //     {
     //     question: "In what year did Neil Armstrong step foot on the moon?",
@@ -77,12 +76,39 @@ var corAnswers = [1969, true, "hydrogen", "venus"]
         },
         select: function(){
             $('#select input:radio').click(function(){
-                if ($(this).val() === '1969'
+                if ($(this).val() === '3'){
+                    corGuess++;
+                    }
+                else {
+                    incorGuess++;
+                    }
             })
-            }
-                
-            
-        
+            $('#select2 input:radio').click(function(){
+                if ($(this).val() === '1'){
+                    corGuess++;
+                    }
+                else {
+                    incorGuess++;
+                    }
+            })
+            $('#select3 input:radio').click(function(){
+                if ($(this).val() === '3'){
+                    corGuess++;
+                    }
+                else {
+                    incorGuess++;
+                    }
+            })
+            $('#select4 input:radio').click(function(){
+                if ($(this).val() === '3'){
+                    corGuess++;
+                    }
+                else {
+                    incorGuess++;
+                    }
+            })
+        },
+
             // game.start - start function called
             // display one question using current question
             // for loop for accessing answers only
@@ -117,8 +143,8 @@ var corAnswers = [1969, true, "hydrogen", "venus"]
             /* Considering adding score clearing instructions for the endGame function */
             console.log("Scores Updated and GAME OVER");
             // UPDATE SCORE
-            // corGCount.text(corGuess);
-            // incorGCount.text(incorGuess);
+            corGCount.text(corGuess);
+            incorGCount.text(incorGuess);
         },
         // This converts game.time to look like a digital timer - still needs a bit of tweaking to work with more than 60 seconds of time
         timeConverter: function(t) {
