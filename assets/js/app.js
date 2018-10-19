@@ -2,8 +2,8 @@
 // document.ready? Followed by window.onselect?
 
 // Display the guesses during and at end of game
-var corGCount = $("#corGuessed", corGuess);
-var incorGCount = $("#incorGuessed", incorGuess);
+var corGCount = $("#corGuessed");
+var incorGCount = $("#incorGuessed");
 
     // var space = [
     //     {
@@ -51,9 +51,9 @@ var incorGCount = $("#incorGuessed", incorGuess);
     // Radio buttons for form - assign value to <input> tags
         // If user selects correct <input> = corGuess++
 
-    console.log("Moon question", space[0].answer);
-    console.log("Sun question", space[1].correctAnswer);
-    console.log("Element question", space[2]);
+    // console.log("Moon question", space[0].answer);
+    // console.log("Sun question", space[1].correctAnswer);
+    // console.log("Element question", space[2]);
     var timerRunning = false;
     var game = {
         corGuess: 0, // Correct guesses
@@ -67,7 +67,6 @@ var incorGCount = $("#incorGuessed", incorGuess);
                 console.log('end the game');
                 game.endGame();
             }
-            console.log('keep running');
             /* Get the current time, pass that into the game.timeConverter function */
             // result saved in var "converted"
             var converted = game.timeConverter(game.time)
@@ -75,55 +74,50 @@ var incorGCount = $("#incorGuessed", incorGuess);
             $("#display").text(converted);
         },
         select: function(){
-            $('#select input:radio').click(function(){
-                if ($(this).val() === '3'){
-                    corGuess++;
+            $('#select1 input:radio').click(function(){
+                if ($(this.value).val() === '3'){
+                    game.corGuess++;
+                    console.log("+1pt Correct", game.corGuess);
                     }
                 else {
-                    incorGuess++;
+                    game.incorGuess++;
+                    console.log("+1pt incorrect", game.incorGuess);
                     }
             })
             $('#select2 input:radio').click(function(){
-                if ($(this).val() === '1'){
-                    corGuess++;
+                if ($(this.value).val() === '1'){
+                    game.corGuess++;
+                    console.log("+1pt Correct", game.corGuess);
                     }
                 else {
-                    incorGuess++;
+                    game.incorGuess++;
+                    console.log("+1pt incorrect", game.incorGuess);
                     }
             })
             $('#select3 input:radio').click(function(){
-                if ($(this).val() === '3'){
-                    corGuess++;
+                if ($(this.value).val() === '3'){
+                    game.corGuess++;
+                    console.log("+1pt Correct", game.corGuess);
                     }
                 else {
-                    incorGuess++;
+                    game.incorGuess++;
+                    console.log("+1pt incorrect", game.incorGuess);
                     }
             })
             $('#select4 input:radio').click(function(){
-                if ($(this).val() === '3'){
-                    corGuess++;
+                if ($(this.value).val() === '3'){
+                    game.corGuess++;
+                    console.log("+1pt Correct", game.corGuess);
                     }
                 else {
-                    incorGuess++;
+                    game.incorGuess++;
+                    console.log("+1pt incorrect", game.incorGuess);
                     }
             })
         },
-
-            // game.start - start function called
-            // display one question using current question
-            // for loop for accessing answers only
-            // for (var i=0; i<space[i].length; i++) {
-            //     console.log("space[i]", space[i]);
-            //     for(var j=0; j<space[j].answer[j].length; j++) {
-            //         console.log("Space answer", space[j].answer);
-                    
-            //         // if user clicks corect space.answer, corGuess++
-            //         // else is user clicks incorrect space.answer, incorGuess++
-            //     }
-            // }
-        // },
         start: function() {
             console.log('start called');
+            
             if (!timerRunning) {
                 // setInverval will decrement 1 every 1 second
                 setInterval(game.countDown, 1000 * 1);
@@ -132,19 +126,17 @@ var incorGCount = $("#incorGuessed", incorGuess);
             else if (game.time == 0){
                 // endGame(); - no more questions? display results page
                 alert("Out of Time! Game Over!");
-                
+                game.endGame();
             }
             game.select();
-            
-
         },
         
         endGame: function() {
             /* Considering adding score clearing instructions for the endGame function */
             console.log("Scores Updated and GAME OVER");
             // UPDATE SCORE
-            corGCount.text(corGuess);
-            incorGCount.text(incorGuess);
+            corGCount.text(game.corGuess);
+            incorGCount.text(game.incorGuess);
         },
         // This converts game.time to look like a digital timer - still needs a bit of tweaking to work with more than 60 seconds of time
         timeConverter: function(t) {
@@ -163,4 +155,3 @@ var incorGCount = $("#incorGuessed", incorGuess);
             return minutes + ":" + seconds;
         },
     }
-
