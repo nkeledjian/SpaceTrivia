@@ -69,48 +69,48 @@ var incorGCount = $("#incorGuessed");
             $('#select1 input:radio').click(function(){
                 if ($(this).val() === '3'){
                     game.corGuess++;
-                    corGCount.text(game.corGuess);
+                    corGCount.append(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
                     }
                 else if ($(this).val() != '3'){
                     game.incorGuess++;
-                    incorGCount.text(game.incorGuess);
+                    incorGCount.append(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
                     }
             })
             $('#select2 input:radio').click(function(){
                 if ($(this).val() === '1'){
                     game.corGuess++;
-                    corGCount.text(game.corGuess);
+                    corGCount.append(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
                     }
                 else if ($(this).val() != '1'){
                     game.incorGuess++;
-                    incorGCount.text(game.incorGuess);
+                    incorGCount.append(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
                     }
             })
             $('#select3 input:radio').click(function(){
                 if ($(this).val() === '3'){
                     game.corGuess++;
-                    corGCount.text(game.corGuess);
+                    corGCount.append(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
                     }
                 else if ($(this).val() != '3'){
                     game.incorGuess++;
-                    incorGCount.text(game.incorGuess);
+                    incorGCount.append(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
                     }
             })
             $('#select4 input:radio').click(function(){
                 if ($(this).val() === '3'){
                     game.corGuess++;
-                    corGCount.text(game.corGuess);
+                    corGCount.append(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
                     }
                 else if ($(this).val() != '3'){
                     game.incorGuess++;
-                    incorGCount.text(game.incorGuess);
+                    incorGCount.append(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
                     }
             })
@@ -135,8 +135,8 @@ var incorGCount = $("#incorGuessed");
             /* Considering adding score clearing instructions for the endGame function */
             console.log("Scores Updated and GAME OVER");
             // UPDATE SCORE
-            corGCount.text(game.corGuess);
-            incorGCount.text(game.incorGuess);
+            corGCount.append(game.corGuess);
+            incorGCount.append(game.incorGuess);
         },
         // This converts game.time to look like a digital timer - still needs a bit of tweaking to work with more than 60 seconds of time
         timeConverter: function(t) {

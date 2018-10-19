@@ -1,22 +1,33 @@
-body { /* Visual */
+body {
     background: rgb(4, 2, 26);
   }
   
+  h1 {
+    font-size: 80px;
+    color: rgb(24, 180, 24);
+    font-family: 'Chakra Petch', sans-serif;
+    text-align: center;
+  }
+
   h2 {
     color: rgb(24, 180, 24);
+    font-family: 'Chakra Petch', sans-serif;
   }
   label {
     color: rgb(24, 180, 24);
+    font-family: 'Chakra Petch', sans-serif;
   }
   #corGuessed {
-    color: lightgreen;
+    color: rgb(53, 185, 53);
+    font-family: 'Chakra Petch', sans-serif;
   }
   #incorGuessed {
-    color: lightgreen;
+    color: rgb(53, 185, 53);
+    font-family: 'Chakra Petch', sans-serif;
   }
   #wrapper {
     /* Box-model */
-    width: 500px;
+    width: 600px;
   
     /* Positioning */
     margin: 50px auto 0;
@@ -34,15 +45,12 @@ body { /* Visual */
   }  
   
   #display {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Chakra Petch', sans-serif;
     font-size: 60px;
     color: rgb(53, 185, 53);
-  
-    /* Typography */
     text-align: center;
-  
-    /* Visual */
     background: rgba(204, 204, 204, 0.336);
+    margin-bottom: 10px;
   }
   
   #q-and-a {
