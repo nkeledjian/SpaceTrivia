@@ -4,44 +4,12 @@
 // Display the guesses during and at end of game
 var corGCount = $("#corGuessed");
 var incorGCount = $("#incorGuessed");
-
-    // var space = [
-    //     {
-    //     question: "In what year did Neil Armstrong step foot on the moon?",
-    //     answer: [
-    //         1965,
-    //         1968,
-    //         1969,
-    //         1973,
-    //     ],
-    //     correctAnswer: 1969,
-    //     },
-    //     {
-    //     question: "True or False: The Earth is 93 million miles away from the Sun",
-    //     answer: [
-    //         "True",
-    //         "False",
-    //     ],
-    //     correctAnswer: true,
-    //     },
-    //     {
-    //     question: "All stars use this element as it's main source of fuel (hint: it's the most abundant element in the universe!)",
-    //     answer: [
-    //         "Helium",
-    //         "Iron",
-    //         "Hydrogen",
-    //         "Oxygen",
-    //     ],
-    //     correctAnswer: "Hydrogen",
-    //     },
-    // ]
     
     window.onload = function() {
         // start timer
         $("#start").on("click", game.start); 
         
         // -- Next to build --- 
-
         // set start sequence at first radio button selection?
         
     };
@@ -69,48 +37,48 @@ var incorGCount = $("#incorGuessed");
             $('#select1 input:radio').click(function(){
                 if ($(this).val() === '3'){
                     game.corGuess++;
-                    corGCount.append(game.corGuess);
+                    corGCount.text(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
                     }
                 else if ($(this).val() != '3'){
                     game.incorGuess++;
-                    incorGCount.append(game.incorGuess);
+                    incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
                     }
             })
             $('#select2 input:radio').click(function(){
                 if ($(this).val() === '1'){
                     game.corGuess++;
-                    corGCount.append(game.corGuess);
+                    corGCount.text(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
                     }
                 else if ($(this).val() != '1'){
                     game.incorGuess++;
-                    incorGCount.append(game.incorGuess);
+                    incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
                     }
             })
             $('#select3 input:radio').click(function(){
                 if ($(this).val() === '3'){
                     game.corGuess++;
-                    corGCount.append(game.corGuess);
+                    corGCount.text(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
                     }
                 else if ($(this).val() != '3'){
                     game.incorGuess++;
-                    incorGCount.append(game.incorGuess);
+                    incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
                     }
             })
             $('#select4 input:radio').click(function(){
                 if ($(this).val() === '3'){
                     game.corGuess++;
-                    corGCount.append(game.corGuess);
+                    corGCount.text(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
                     }
                 else if ($(this).val() != '3'){
                     game.incorGuess++;
-                    incorGCount.append(game.incorGuess);
+                    incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
                     }
             })
@@ -135,8 +103,8 @@ var incorGCount = $("#incorGuessed");
             /* Considering adding score clearing instructions for the endGame function */
             console.log("Scores Updated and GAME OVER");
             // UPDATE SCORE
-            corGCount.append(game.corGuess);
-            incorGCount.append(game.incorGuess);
+            corGCount.text(game.corGuess);
+            incorGCount.text(game.incorGuess);
         },
         // This converts game.time to look like a digital timer - still needs a bit of tweaking to work with more than 60 seconds of time
         timeConverter: function(t) {
