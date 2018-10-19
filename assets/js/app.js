@@ -1,5 +1,5 @@
 // SPACE THEMED TRIVIA
-// document.ready? Followed by window.onload?
+// document.ready? Followed by window.onselect?
 
 // Display the guesses during and at end of game
 var corGCount = $("#corGuessed");
@@ -48,10 +48,7 @@ var corAnswers = [1969, true, "hydrogen", "venus"]
     };
 
     // ---NOTES---
-    // Function to load question - load question right as timer starts
-    // Current question counter - aid for loading question
-    // Answer submission = increment current question counter
-    // Call load question function with new question 
+    
     // Radio buttons for form - assign value to <input> tags
         // If user selects correct <input> = corGuess++
 
@@ -72,39 +69,33 @@ var corAnswers = [1969, true, "hydrogen", "venus"]
                 game.endGame();
             }
             console.log('keep running');
-            
-
             /* Get the current time, pass that into the game.timeConverter function */
             // result saved in var "converted"
-            var converted = game.timeConverter(game.time);
-            // console.log(converted);
-
+            var converted = game.timeConverter(game.time)
             // Display variable in "display" div.
             $("#display").text(converted);
         },
-        nextQuestion: function(){
-            // load question and cycle through questions
-
-            // currentQuestion++
-            // load();
-        },
-        load: function(){
+        select: function(){
+            $('#select input:radio').click(function(){
+                if ($(this).val() === '1969'
+            })
+            }
+                
+            
+        
             // game.start - start function called
             // display one question using current question
             // for loop for accessing answers only
-            for (var i=0; i<space[i].length; i++) {
-                console.log("space[i]", space[i]);
-                for(var j=0; j<space[j].answer[j].length; j++) {
-                    $(function(){
-                        $('input[type=""]')
-                    })
-                    console.log("Space answer", space[j].answer);
+            // for (var i=0; i<space[i].length; i++) {
+            //     console.log("space[i]", space[i]);
+            //     for(var j=0; j<space[j].answer[j].length; j++) {
+            //         console.log("Space answer", space[j].answer);
                     
-                    // if user clicks corect space.answer, corGuess++
-                    // else is user clicks incorrect space.answer, incorGuess++
-                }
-            }
-        },
+            //         // if user clicks corect space.answer, corGuess++
+            //         // else is user clicks incorrect space.answer, incorGuess++
+            //     }
+            // }
+        // },
         start: function() {
             console.log('start called');
             if (!timerRunning) {
@@ -117,7 +108,7 @@ var corAnswers = [1969, true, "hydrogen", "venus"]
                 alert("Out of Time! Game Over!");
                 
             }
-            game.load();
+            game.select();
             
 
         },
