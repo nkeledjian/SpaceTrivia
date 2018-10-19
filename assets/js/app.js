@@ -5,7 +5,7 @@
 var corGCount = $("#corGuessed");
 var incorGCount = $("#incorGuessed");
 var question = $("#q-and-a");
-
+var corAnswers = [1969, true, "hydrogen", "venus"]
     // var space = [
     //     {
     //     question: "In what year did Neil Armstrong step foot on the moon?",
@@ -40,32 +40,11 @@ var question = $("#q-and-a");
     window.onload = function() {
         // start timer
         $("#start").on("click", game.start); 
-        // html.append questions
-
-
-        // collect user answers...
-
+        
         // -- Next to build --- 
 
-        // set start button to hidden when clicked
-
-        // Start button will initiate question q-and-a sequence
-
-        /* implement for loop on for loop to access the space object and it's arrays of questions create a whole separate function to handle this? Should this be part of the game.start object?*/
-        // for (var i=0; i<space.length; i++) {
-        //     // logic
-        //     console.log(space.length);
-        //     console.log(space[i].question);
-            
-        //     for(var j=0; j<space[j].answer.length; j++) {
-        //         // if user selects correct radio button = corGuess++
-        //         console.log(space[i].answer)
-        //         // 
-        //         // else is user clicks incorrect space.answer, incorGuess++
-        //     }
-        // }
+        // set start sequence at first radio button selection
         
-        // display q's and a's in: div id=q-and-a 
     };
 
     // ---NOTES---
@@ -116,7 +95,9 @@ var question = $("#q-and-a");
             for (var i=0; i<space[i].length; i++) {
                 console.log("space[i]", space[i]);
                 for(var j=0; j<space[j].answer[j].length; j++) {
-                    if ()
+                    $(function(){
+                        $('input[type=""]')
+                    })
                     console.log("Space answer", space[j].answer);
                     
                     // if user clicks corect space.answer, corGuess++
