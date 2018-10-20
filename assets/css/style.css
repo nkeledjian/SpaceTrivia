@@ -26,10 +26,15 @@ body {
     color: rgb(53, 185, 53);
     font-family: 'Chakra Petch', sans-serif;
   }
-  #guess {
+  p {
     color: rgb(53, 185, 53);
     font-weight: bold;
+    font-size: 20px;
     font-family: 'Chakra Petch', sans-serif;
+  }
+  label {
+    background-color: black;
+    padding: 10px, 10px, 10px, 10px;
   }
   #wrapper {
     /* Box-model */
