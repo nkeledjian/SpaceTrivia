@@ -39,11 +39,13 @@ var incorGCount = $("#incorGuessed");
                     game.corGuess++;
                     corGCount.text(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
+                    $('#select1 input').prop('disabled', true);
                     }
                 else if ($(this).val() != '3'){
                     game.incorGuess++;
                     incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
+                    $('#select1 input').prop('disabled', true);
                     }
             })
             $('#select2 input:radio').click(function(){
@@ -51,11 +53,13 @@ var incorGCount = $("#incorGuessed");
                     game.corGuess++;
                     corGCount.text(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
+                    $('#select2 input').prop('disabled', true);
                     }
                 else if ($(this).val() != '1'){
                     game.incorGuess++;
                     incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
+                    $('#select2 input').prop('disabled', true);
                     }
             })
             $('#select3 input:radio').click(function(){
@@ -63,11 +67,13 @@ var incorGCount = $("#incorGuessed");
                     game.corGuess++;
                     corGCount.text(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
+                    $('#select3 input').prop('disabled', true);
                     }
                 else if ($(this).val() != '3'){
                     game.incorGuess++;
                     incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
+                    $('#select3 input').prop('disabled', true);
                     }
             })
             $('#select4 input:radio').click(function(){
@@ -75,11 +81,13 @@ var incorGCount = $("#incorGuessed");
                     game.corGuess++;
                     corGCount.text(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
+                    $('#select4 input').prop('disabled', true);
                     }
                 else if ($(this).val() != '3'){
                     game.incorGuess++;
                     incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
+                    $('#select4 input').prop('disabled', true);
                     }
             })
         },
