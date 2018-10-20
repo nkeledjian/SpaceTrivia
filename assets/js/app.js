@@ -36,6 +36,7 @@ var incorGCount = $("#incorGuessed");
             $("#display").text(converted);
         },
         select: function(){
+            // all below functions take a click function associated with 
             $('#select1 input:radio').click(function(){
                 if ($(this).val() === '3'){
                     game.corGuess++;
@@ -94,18 +95,16 @@ var incorGCount = $("#incorGuessed");
                 timerRunning = true;
                 }
             else if (game.time == 0){
+                // stops the game timer
                 clearInterval(game.countDown, 1000 * 1);
                 alert("Out of Time! Game Over!");
                 timerRunning = false;
-                // game.endGame();
             }
             game.select();
         },
         
         endGame: function() {
-            alert("game over!");
-            corGCount.text(game.corGuess);
-            incorGCount.text(game.incorGuess);
+            alert("Game Over!" + "\n" + "Correct Guesses: " + game.corGuess + "\n" + "Incorrect Guesses: " + game.incorGuess);
         },
         /* This converts game.time to look like a digital timer - still needs a bit of tweaking to work with more than 60 seconds of time */
         timeConverter: function(t) {
