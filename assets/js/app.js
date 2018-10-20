@@ -1,7 +1,4 @@
 // SPACE THEMED TRIVIA
-// document.ready? Followed by window.onselect?
-
-// Display the guesses during and at end of game
 var corGCount = $("#corGuessed");
 var incorGCount = $("#incorGuessed");
     
@@ -36,7 +33,7 @@ var incorGCount = $("#incorGuessed");
             $("#display").text(converted);
         },
         select: function(){
-            // all below functions take a click function associated with 
+            /* all below functions take a click function associated with id's in the forms that hold the radio buttons - if user selects a radio button that has the correct value, increment correct answer. Otherise, if player selects incorrect radio button, increment incorrect answer */
             $('#select1 input:radio').click(function(){
                 if ($(this).val() === '3'){
                     game.corGuess++;
@@ -106,7 +103,7 @@ var incorGCount = $("#incorGuessed");
         endGame: function() {
             alert("Game Over!" + "\n" + "Correct Guesses: " + game.corGuess + "\n" + "Incorrect Guesses: " + game.incorGuess);
         },
-        /* This converts game.time to look like a digital timer - still needs a bit of tweaking to work with more than 60 seconds of time */
+        /* This converts game.time to look like a digital timer*/
         timeConverter: function(t) {
             var minutes = Math.floor(t / 60);
             var seconds = t + (minutes * 60);
