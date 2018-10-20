@@ -30,6 +30,7 @@ body {
     color: rgb(53, 185, 53);
     font-weight: bold;
     font-size: 20px;
+    text-align: center;
     font-family: 'Chakra Petch', sans-serif;
   }
   label {
