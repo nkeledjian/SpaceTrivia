@@ -21,8 +21,10 @@ var incorGCount = $("#incorGuessed");
         
         countDown: function() {
             // decrement time by 1
-            game.time--;
-            if(game.time === 0){
+            if (game.time >= 1) {
+                game.time--;
+            }
+            else if(game.time === 0){
 
                 console.log('end the game');
                 game.endGame();
@@ -91,22 +93,21 @@ var incorGCount = $("#incorGuessed");
                 setInterval(game.countDown, 1000 * 1);
                 timerRunning = true;
                 }
-            else if (game.time === 0){
+            else if (game.time == 0){
                 clearInterval(game.countDown, 1000 * 1);
                 alert("Out of Time! Game Over!");
+                timerRunning = false;
                 // game.endGame();
             }
             game.select();
         },
         
-        // endGame: function() {
-        //     /* Considering adding score clearing instructions for the endGame function */
-        //     console.log("Scores Updated and GAME OVER");
-        //     // UPDATE SCORE
-        //     corGCount.text(game.corGuess);
-        //     incorGCount.text(game.incorGuess);
-        // },
-        // This converts game.time to look like a digital timer - still needs a bit of tweaking to work with more than 60 seconds of time
+        endGame: function() {
+            alert("game over!");
+            corGCount.text(game.corGuess);
+            incorGCount.text(game.incorGuess);
+        },
+        /* This converts game.time to look like a digital timer - still needs a bit of tweaking to work with more than 60 seconds of time */
         timeConverter: function(t) {
             var minutes = Math.floor(t / 60);
             var seconds = t + (minutes * 60);
