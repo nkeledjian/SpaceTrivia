@@ -3,11 +3,8 @@ var corGCount = $("#corGuessed");
 var incorGCount = $("#incorGuessed");
     
     window.onload = function() {
-        // start timer
+        // User will start timer to allow radio button selection
         $("#start").on("click", game.start); 
-    
-        // -- Next to build --- 
-        // set start sequence at first radio button selection?
     };
 
     var timerRunning = false;
@@ -37,17 +34,20 @@ var incorGCount = $("#incorGuessed");
             $('#select1 input:radio').click(function(){
                 if ($(this).val() === '3'){
                     game.corGuess++;
+                    // display to correct guess count var corGCount
                     corGCount.text(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
+                    // upon radio button selection, all radio buttons become disabled
                     $('#select1 input').prop('disabled', true);
                     }
                 else if ($(this).val() != '3'){
                     game.incorGuess++;
+                    // display to incorrect guess count var incorGCount
                     incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
                     $('#select1 input').prop('disabled', true);
                     }
-            })
+            }) // repeat for all question sections
             $('#select2 input:radio').click(function(){
                 if ($(this).val() === '1'){
                     game.corGuess++;
@@ -100,7 +100,7 @@ var incorGCount = $("#incorGuessed");
                 timerRunning = true;
                 }
             else if (game.time == 0){
-                // stops the game timer
+                // stops the game timer - GAME OVER!
                 clearInterval(game.countDown, 1000 * 1);
                 alert("Out of Time! Game Over!");
                 timerRunning = false;
