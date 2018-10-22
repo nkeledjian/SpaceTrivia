@@ -1,3 +1,4 @@
 # TriviaGame
-A timed trivia game to test one's knowledge.
-Built with JavaScript and jQuery.
+Space Themed Trivia!
+Test your knowledge of the cosmos...
+Built with JavaScript/jQuery.
