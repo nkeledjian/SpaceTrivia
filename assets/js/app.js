@@ -90,6 +90,20 @@ var incorGCount = $("#incorGuessed");
                     $('#select4 input').prop('disabled', true);
                     }
             })
+            $('#select5 input:radio').click(function(){
+                if ($(this).val() === '4'){
+                    game.corGuess++;
+                    corGCount.text(game.corGuess);
+                    console.log("+1pt Correct", game.corGuess);
+                    $('#select4 input').prop('disabled', true);
+                    }
+                else if ($(this).val() != '4'){
+                    game.incorGuess++;
+                    incorGCount.text(game.incorGuess);
+                    console.log("+1pt incorrect", game.incorGuess);
+                    $('#select4 input').prop('disabled', true);
+                    }
+            })
         },
         start: function() {
             console.log('start called');
