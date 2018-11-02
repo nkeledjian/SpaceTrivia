@@ -95,13 +95,13 @@ var incorGCount = $("#incorGuessed");
                     game.corGuess++;
                     corGCount.text(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
-                    $('#select4 input').prop('disabled', true);
+                    $('#select5 input').prop('disabled', true);
                     }
                 else if ($(this).val() != '4'){
                     game.incorGuess++;
                     incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
-                    $('#select4 input').prop('disabled', true);
+                    $('#select5 input').prop('disabled', true);
                     }
             })
         },
@@ -121,7 +121,9 @@ var incorGCount = $("#incorGuessed");
             }
             game.select();
         },
-        
+        results: function() {
+            // if all radio buttons have been disabled/selected, stop game timer, display results message and player's score
+        },
         endGame: function() {
             alert("Game Over!" + "\n" + "Correct Guesses: " + game.corGuess + "\n" + "Incorrect Guesses: " + game.incorGuess);
         },
