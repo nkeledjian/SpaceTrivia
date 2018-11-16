@@ -11,6 +11,7 @@ var incorGCount = $("#incorGuessed");
     var game = {
         corGuess: 0, // Correct guesses
         incorGuess: 0, // Incorrect guesses
+        selectCount: 0,
         time: 60,
         
         countDown: function() {
@@ -18,8 +19,7 @@ var incorGCount = $("#incorGuessed");
             if (game.time >= 1) {
                 game.time--;
             }
-            else if(game.time === 0){
-
+            else if(game.selectCount === 5 || game.time === 0){
                 console.log('end the game');
                 game.endGame();
             }
@@ -39,6 +39,8 @@ var incorGCount = $("#incorGuessed");
                     console.log("+1pt Correct", game.corGuess);
                     // upon radio button selection, all radio buttons become disabled
                     $('#select1 input').prop('disabled', true);
+                    game.selectCount++;
+                    console.log("Select Count", game.selectCount);
                     }
                 else if ($(this).val() != '3'){
                     game.incorGuess++;
@@ -46,6 +48,8 @@ var incorGCount = $("#incorGuessed");
                     incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
                     $('#select1 input').prop('disabled', true);
+                    game.selectCount++;
+                    console.log("Select Count", game.selectCount);
                     }
             }) // repeat for all question sections
             $('#select2 input:radio').click(function(){
@@ -54,12 +58,16 @@ var incorGCount = $("#incorGuessed");
                     corGCount.text(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
                     $('#select2 input').prop('disabled', true);
+                    game.selectCount++;
+                    console.log("Select Count", game.selectCount);
                     }
                 else if ($(this).val() != '1'){
                     game.incorGuess++;
                     incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
                     $('#select2 input').prop('disabled', true);
+                    game.selectCount++;
+                    console.log("Select Count", game.selectCount);
                     }
             })
             $('#select3 input:radio').click(function(){
@@ -68,12 +76,16 @@ var incorGCount = $("#incorGuessed");
                     corGCount.text(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
                     $('#select3 input').prop('disabled', true);
+                    game.selectCount++;
+                    console.log("Select Count", game.selectCount);
                     }
                 else if ($(this).val() != '3'){
                     game.incorGuess++;
                     incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
                     $('#select3 input').prop('disabled', true);
+                    game.selectCount++;
+                    console.log("Select Count", game.selectCount);
                     }
             })
             $('#select4 input:radio').click(function(){
@@ -82,12 +94,16 @@ var incorGCount = $("#incorGuessed");
                     corGCount.text(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
                     $('#select4 input').prop('disabled', true);
+                    game.selectCount++;
+                    console.log("Select Count", game.selectCount);
                     }
                 else if ($(this).val() != '3'){
                     game.incorGuess++;
                     incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
                     $('#select4 input').prop('disabled', true);
+                    game.selectCount++;
+                    console.log("Select Count", game.selectCount);
                     }
             })
             $('#select5 input:radio').click(function(){
@@ -96,12 +112,16 @@ var incorGCount = $("#incorGuessed");
                     corGCount.text(game.corGuess);
                     console.log("+1pt Correct", game.corGuess);
                     $('#select5 input').prop('disabled', true);
+                    game.selectCount++;
+                    console.log("Select Count", game.selectCount);
                     }
                 else if ($(this).val() != '4'){
                     game.incorGuess++;
                     incorGCount.text(game.incorGuess);
                     console.log("+1pt incorrect", game.incorGuess);
                     $('#select5 input').prop('disabled', true);
+                    game.selectCount++;
+                    console.log("Select Count", game.selectCount);
                     }
             })
         },
@@ -121,11 +141,8 @@ var incorGCount = $("#incorGuessed");
             }
             game.select();
         },
-        results: function() {
-            // if all radio buttons have been disabled/selected, stop game timer, display results message and player's score
-        },
         endGame: function() {
-            alert("Game Over!" + "\n" + "Correct Guesses: " + game.corGuess + "\n" + "Incorrect Guesses: " + game.incorGuess);
+            alert("---GAME RESULTS---" + "\n" + "Correct Guesses: " + game.corGuess + "\n" + "Incorrect Guesses: " + game.incorGuess);
         },
         /* This converts game.time to look like a digital timer*/
         timeConverter: function(t) {
