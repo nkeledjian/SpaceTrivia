@@ -4,65 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Links to StyleSheets -->
+    <link type="text/css" rel="stylesheet" href="./assets/css/normalize.css">
+    <link type="text/css" rel="stylesheet" href="./assets/css/skeleton.css">
     <link type="text/css" rel="stylesheet" href="./assets/css/style.css">
+    <!-- Lik to Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Chakra+Petch" rel="stylesheet">
     <title>Space Trivia!</title>
 </head>
 <body>
-    <div id="wrapper">
-        <h1>Space Trivia!</h1>
-
-        <div id="display">1:00</div>
-    
-        <p>Correct: <span id="corGuessed">0</span></p>
-        <p>Incorrect: <span id="incorGuessed">0</span></p>
-        <!-- Start button to begin game -->
-        <div id="buttons">
-          <button id="start">START</button>
+    <div class="container">
+        <div class="row">
+            <!-- <div class="offset-by-two.columns"></div> -->
+                <div class="twelve columns">
+                    <h1>Space Trivia!</h1>
+                </div>
+            <!-- <div class="offset-by-two.columns"></div> -->
         </div>
-
-        <h2>In what year did Neil Armstrong step foot on the moon?</h2>
-            <form id="select1">
-              <input type="radio" name="options" value="1" >
-              <label>1965</label> 
-              <input type="radio" name="options" value="2">
-              <label>1968</label> 
-              <input type="radio" name="options" value="3">
-              <label>1969</label> 
-              <input type="radio" name="options" value="4">
-              <label>1973</label> 
-            </form>
-        <h2>True or False: The Earth is 93 million miles away from the Sun</h2>
-            <form id="select2">
-              <input type="radio" name="options" value="1">
-              <label>true</label> 
-              <input type="radio" name="options" value="2">
-              <label>false</label> 
-            </form>
-        <h2>All stars use this element as it's main source of fuel (hint: it's the most abundant element in the universe!)</h2>
-            <form id="select3">
-              <input type="radio" name="options" value="1">
-              <label>Helium</label> 
-              <input type="radio" name="options" value="2">
-              <label>Iron</label> 
-              <input type="radio" name="options" value="3">
-              <label>Hydrogen</label> 
-              <input type="radio" name="options" value="4">
-              <label>Oxygen</label> 
-            </form>
-        <h2>Which planet in our solar system is closest in size to Earth?</h2>
-            <form id="select4">
-              <input type="radio" name="options" value="1">
-              <label>Mars</label> 
-              <input type="radio" name="options" value="2">
-              <label>Mercury</label> 
-              <input type="radio" name="options" value="3">
-              <label>Venus</label> 
-              <input type="radio" name="options" value="4">
-              <label>Pluto</label> 
-            </form>
-        <h2>Which moon listed below does not belong to the planet Jupiter?</h2>
-            <form id="select5">
+        <div class="row">
+            <div class="twelve columns">
+                <div id="display">1:00</div>
+                <p>Correct: <span id="corGuessed">0</span></p>
+                <p>Incorrect: <span id="incorGuessed">0</span></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="twelve columns">  
+                <!-- Start button to begin game -->
+                <div id="btn-pos">
+                    <button class="button" id="start">START</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="twelve columns">   
+                <h2>In what year did Neil Armstrong step foot on the moon?</h2>
+                <form id="select1">
+                <input type="radio" name="options" value="1" >
+                <label>1965</label> 
+                <input type="radio" name="options" value="2">
+                <label>1968</label> 
+                <input type="radio" name="options" value="3">
+                <label>1969</label> 
+                <input type="radio" name="options" value="4">
+                <label>1973</label> 
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="twelve columns">
+                <h2>True or False: The Earth is 93 million miles away from the Sun</h2>
+                <form id="select2">
+                <input type="radio" name="options" value="1">
+                <label>true</label> 
+                <input type="radio" name="options" value="2">
+                <label>false</label> 
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="twelve columns">
+                <h2>All stars use this element as it's main source of fuel (hint: it's the most abundant element in the universe!)</h2>
+                <form id="select3">
+                <input type="radio" name="options" value="1">
+                <label>Helium</label> 
+                <input type="radio" name="options" value="2">
+                <label>Iron</label> 
+                <input type="radio" name="options" value="3">
+                <label>Hydrogen</label> 
+                <input type="radio" name="options" value="4">
+                <label>Oxygen</label> 
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="twelve columns">
+                <h2>Which planet in our solar system is closest in size to Earth?</h2>
+                <form id="select4">
+                <input type="radio" name="options" value="1">
+                <label>Mars</label> 
+                <input type="radio" name="options" value="2">
+                <label>Mercury</label> 
+                <input type="radio" name="options" value="3">
+                <label>Venus</label> 
+                <input type="radio" name="options" value="4">
+                <label>Pluto</label> 
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="twelve columns">   
+                <h2>Which moon listed below does not belong to the planet Jupiter?</h2>
+                <form id="select5">
                 <input type="radio" name="options" value="1">
                 <label>Io</label> 
                 <input type="radio" name="options" value="2">
@@ -71,9 +104,10 @@
                 <label>Europa</label> 
                 <input type="radio" name="options" value="4">
                 <label>Phobos</label> 
-            </form>
-    </div>
-      
+                </form>
+            </div>
+        </div>     
+    </div> 
 </body>
     <!-- jQuery -->
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

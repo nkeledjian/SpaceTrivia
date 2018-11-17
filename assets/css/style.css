@@ -8,6 +8,7 @@ body {
     color: rgb(24, 180, 24);
     font-family: 'Chakra Petch', sans-serif;
     text-align: center;
+    margin-top: 20px;
   }
 
   h2 {
@@ -43,30 +44,24 @@ body {
     font-family: 'Chakra Petch', sans-serif;
   }
   
-  #wrapper {
-    /* Box-model */
-    width: 600px;
-  
-    /* Positioning */
-    margin: 50px auto 90px;
-  }
-  
-  #buttons { /* Typography */
+  #btn-pos {
     text-align: center;
   }
-  
+
   button {
     height: 50px;
     width: 100px;
     color: rgb(53, 185, 53);
     font-size: 18px;
     font-weight: 700;
-    background: rgba(68, 65, 65, 0.911);
+    background: rgba(163, 153, 153, 0.808);
     border:rgba(68, 65, 65, 0.911);
     font-family: 'Chakra Petch', sans-serif;
+    transition: all .07s ease-in-out; 
   }
   button:hover {
     background-color: rgb(35, 134, 35);
+    transform: scale(1.1);
   }  
   
   #display {
@@ -75,6 +70,6 @@ body {
     color: rgb(53, 185, 53);
     text-align: center;
     background: rgba(68, 65, 65, 0.808);
-    margin-top: -40px;
+    margin-top: 10px;
     margin-bottom: 20px;
   }
