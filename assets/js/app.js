@@ -18,6 +18,7 @@ var incorGCount = $("#incorGuessed");
             // decrement time by 1
             if (game.time >= 1) {
                 game.time--;
+                game.allSelected();
             }
             else if(game.time === 0){
                 console.log('out of time - end the game');
@@ -126,30 +127,23 @@ var incorGCount = $("#incorGuessed");
             })
         },
         allSelected: function() {
-            if(game.selectCount === 5){
+            if (game.selectCount === 5){
+                timerRunning = false;
                 console.log('All questions answered - end the game');
                 game.endGame();
             }
         },
         start: function() {
-            console.log('start called');
-            
+            console.log('game started');
             if (!timerRunning) {
                 // setInverval will decrement 1 every 1 second
                 setInterval(game.countDown, 1000 * 1);
                 timerRunning = true;
                 }
-            // else if (game.time == 0){
-            //     // stops the game timer - GAME OVER!
-            //     clearInterval(game.countDown, 1000 * 1);
-            //     alert("Out of Time! Game Over!");
-            //     timerRunning = false;
-            // }
             game.select();
-            game.allSelected();
         },
         endGame: function() {
-            alert("---GAME RESULTS---" + "\n" + "Correct Guesses: " + game.corGuess + "\n" + "Incorrect Guesses: " + game.incorGuess);
+            alert("---GAME RESULTS---" + "\n" + "Correct Guesses: " + game.corGuess + "\n" + "Incorrect Guesses: " + game.incorGuess +"\n" + "-----------------------" + "\n" + "Completed within: " + game.time + " seconds" + "\n" + "Ready for liftoff again? Click OK!");
             // reload webpage after user clicks OK
             document.location.reload();
         },
