@@ -9,9 +9,13 @@ var incorGCount = $("#incorGuessed");
 
     var timerRunning = false;
     var game = {
-        corGuess: 0, // Correct guesses
-        incorGuess: 0, // Incorrect guesses
+        // Correct guesses
+        corGuess: 0,
+        // Incorrect guesses
+        incorGuess: 0, 
+        // Question selection counter - if user selects all 5 questions, game timer stops and presents results in an alert window
         selectCount: 0,
+        // User has 1 minute to answer questions
         time: 60,
         
         countDown: function() {
