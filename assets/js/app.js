@@ -19,8 +19,8 @@ var incorGCount = $("#incorGuessed");
             if (game.time >= 1) {
                 game.time--;
             }
-            else if(game.selectCount === 5 || game.time === 0){
-                console.log('end the game');
+            else if(game.time === 0){
+                console.log('out of time - end the game');
                 game.endGame();
             }
             /* Get the current time, pass that into the game.timeConverter function */
@@ -125,6 +125,12 @@ var incorGCount = $("#incorGuessed");
                     }
             })
         },
+        allSelected: function() {
+            if(game.selectCount === 5){
+                console.log('All questions answered - end the game');
+                game.endGame();
+            }
+        },
         start: function() {
             console.log('start called');
             
@@ -133,16 +139,19 @@ var incorGCount = $("#incorGuessed");
                 setInterval(game.countDown, 1000 * 1);
                 timerRunning = true;
                 }
-            else if (game.time == 0){
-                // stops the game timer - GAME OVER!
-                clearInterval(game.countDown, 1000 * 1);
-                alert("Out of Time! Game Over!");
-                timerRunning = false;
-            }
+            // else if (game.time == 0){
+            //     // stops the game timer - GAME OVER!
+            //     clearInterval(game.countDown, 1000 * 1);
+            //     alert("Out of Time! Game Over!");
+            //     timerRunning = false;
+            // }
             game.select();
+            game.allSelected();
         },
         endGame: function() {
             alert("---GAME RESULTS---" + "\n" + "Correct Guesses: " + game.corGuess + "\n" + "Incorrect Guesses: " + game.incorGuess);
+            // reload webpage after user clicks OK
+            document.location.reload();
         },
         /* This converts game.time to look like a digital timer*/
         timeConverter: function(t) {
@@ -156,7 +165,7 @@ var incorGCount = $("#incorGuessed");
             minutes = "00";
             }
             else if (minutes < 10) {
-            minutes = "0" - minutes;
+            minutes = "00" - minutes;
             }
             return minutes + ":" + seconds;
         },
