@@ -13,13 +13,15 @@ body {
 
   h2 {
     color: rgb(24, 180, 24);
-    background: rgba(68, 65, 65, 0.808);
+    background: rgba(68, 65, 65, 0.780);
     font-family: 'Chakra Petch', sans-serif;
     font-style: bold;
+    font-size: 30px;
     text-align: center;
   }
   label {
     background-color: black;
+    opacity: 0.760;
     color: rgb(24, 180, 24);
     padding-left: 10px;
     padding-right: 10px;
