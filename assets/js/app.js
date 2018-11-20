@@ -147,7 +147,7 @@ var incorGCount = $("#incorGuessed");
             game.select();
         },
         endGame: function() {
-            alert("---GAME RESULTS---" + "\n" + "Correct Guesses: " + game.corGuess + "\n" + "Incorrect Guesses: " + game.incorGuess +"\n" + "-----------------------" + "\n" + "Ready for liftoff again? Click OK!");
+            alert("---GAME RESULTS---" + "\n" + "Correct Guesses: " + game.corGuess + "\n" + "Incorrect Guesses: " + game.incorGuess +"\n" + "-----------------------");
             // reload webpage after user clicks OK
             document.location.reload();
         },
