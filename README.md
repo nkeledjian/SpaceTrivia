@@ -1,7 +1,7 @@
 # SpaceTrivia
 A space themed trivia game to test your knowledge of the cosmos.
 
-![alt text](https://media.giphy.com/media/dAXnl3jhnd3RWsxr9b/giphy.gif)
+![alt text](https://media.giphy.com/media/2fOq6cSaZ6HbuBeqXR/giphy.gif)
 
 Select a radio button for your answer - all radio buttons deactivate once you make a selection.
 
