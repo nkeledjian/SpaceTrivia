@@ -35,7 +35,7 @@ var incorGCount = $("#incorGuessed");
             $("#display").text(converted);
         },
         select: function(){
-            /* all below functions take a click function associated with id's in the forms that hold the radio buttons - if user selects a radio button that has the correct value, increment correct answer. Otherise, if player selects incorrect radio button, increment incorrect answer */
+            /* all below functions take a click function associated with id's in the forms that hold the radio buttons - if user selects a radio button that has the correct value, increment correct score. Otherise, if player selects incorrect answer, increment incorrect score */
             $('#select1 input:radio').click(function(){
                 if ($(this).val() === '3'){
                     game.corGuess++;
@@ -130,6 +130,7 @@ var incorGCount = $("#incorGuessed");
                     }
             })
         },
+        // once all questions selected, stop clock and display results via endGame() function
         allSelected: function() {
             if (game.selectCount === 5){
                 timerRunning = false;
@@ -140,16 +141,15 @@ var incorGCount = $("#incorGuessed");
         start: function() {
             console.log('game started');
             if (!timerRunning) {
-                // setInverval will decrement 1 every 1 second
+                // setInverval will decrement every 1 second
                 setInterval(game.countDown, 1000 * 1);
                 timerRunning = true;
                 }
             game.select();
         },
         endGame: function() {
-            document.write("---GAME RESULTS---" + "\n" + "Correct Guesses: " + game.corGuess + "\n" + "Incorrect Guesses: " + game.incorGuess +"\n" + "-----------------------")
-            // alert("---GAME RESULTS---" + "\n" + "Correct Guesses: " + game.corGuess + "\n" + "Incorrect Guesses: " + game.incorGuess +"\n" + "-----------------------");
-            // reload webpage after user clicks OK
+            alert("---GAME RESULTS---" + "\n" + "Correct Guesses: " + game.corGuess + "\n" + "Incorrect Guesses: " + game.incorGuess +"\n" + "-----------------------")
+            // webpage reloads after clicking OK
             document.location.reload();
         },
         /* This converts game.time to look like a digital timer*/
