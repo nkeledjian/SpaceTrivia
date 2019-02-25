@@ -147,7 +147,10 @@ var incorGCount = $("#incorGuessed");
             }
         },
         endGame: function() {
-            alert("---GAME RESULTS---" + "\n" + "Correct Guesses: " + game.corGuess + "\n" + "Incorrect Guesses: " + game.incorGuess +"\n" + "-----------------------")
+            // var gameResults = document.getElementById('endGameResults');
+            // gameResults.innerHTML += game.corGuess + game.incorGuess;
+            
+            alert("---GAME RESULTS---" + "\n" + "Correct Guesses: " + game.corGuess + "\n" + "Incorrect Guesses: " + game.incorGuess +"\n" + "-----------------------");
             // webpage reloads after clicking OK
             document.location.reload();
         },
