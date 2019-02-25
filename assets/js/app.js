@@ -17,7 +17,15 @@ var incorGCount = $("#incorGuessed");
         selectCount: 0,
         // User has 1 minute to answer questions
         time: 60,
-        
+        start: function() {
+            console.log('game started');
+            if (!timerRunning) {
+                // setInverval will decrement every 1 second
+                setInterval(game.countDown, 1000 * 1);
+                timerRunning = true;
+                }
+            game.select();
+        },
         countDown: function() {
             // decrement time by 1
             if (game.time >= 1) {
@@ -137,15 +145,6 @@ var incorGCount = $("#incorGuessed");
                 console.log('All questions answered - end the game');
                 game.endGame();
             }
-        },
-        start: function() {
-            console.log('game started');
-            if (!timerRunning) {
-                // setInverval will decrement every 1 second
-                setInterval(game.countDown, 1000 * 1);
-                timerRunning = true;
-                }
-            game.select();
         },
         endGame: function() {
             alert("---GAME RESULTS---" + "\n" + "Correct Guesses: " + game.corGuess + "\n" + "Incorrect Guesses: " + game.incorGuess +"\n" + "-----------------------")
