@@ -150,9 +150,25 @@ var incorGCount = $("#incorGuessed");
             // var gameResults = document.getElementById('endGameResults');
             // gameResults.innerHTML += game.corGuess + game.incorGuess;
             
-            alert("---GAME RESULTS---" + "\n" + "Correct Guesses: " + game.corGuess + "\n" + "Incorrect Guesses: " + game.incorGuess +"\n" + "-----------------------");
+            // alert("---GAME RESULTS---" + "\n" 
+            // + "Correct Guesses: " + game.corGuess + "\n" 
+            // + "Incorrect Guesses: " + game.incorGuess +"\n" 
+            // + "-----------------------")
+            var modal, closeBtn, gameScores
+
+            // Get modal element
+            modal = document.getElementById('endGameModal');
+            // Get close button element
+            closeBtn = document.getElementById('closeBtn');
+
+            function openModal() {
+                modal.style.display = 'block';
+            }
+
+
             // webpage reloads after clicking OK
             document.location.reload();
+            
         },
         /* This converts game.time to look like a digital timer*/
         timeConverter: function(t) {
